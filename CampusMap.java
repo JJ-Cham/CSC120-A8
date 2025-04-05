@@ -42,8 +42,19 @@ public class CampusMap {
 
     public static void main(String[] args) {
         CampusMap myMap = new CampusMap();
+        
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Ziskind House", "79-91 Elm st Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Burton Hall", "100 Park House Northampton, MA 01063", 3));
+        myMap.addBuilding(new Building("College Hall", "100 Main st Northampton, MA 01063", 5));
+        myMap.addBuilding(new Building("Mwangi Cultural Center", "100 mall Northampton, MA 01063", 1)); 
+        myMap.addBuilding(new Building("Yolanda King House", "100 Blue Street Northampton, MA 01063", 3));
+        myMap.addBuilding(new Building("Morrow House", "100 Yellow Street Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("King Scales House", "100 Red Street Northampton, MA 01063", 4));   
+        myMap.addBuilding(new Building("Chuckett House", "100 Pink Street Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Tyler House", "100 Black Street Northampton, MA 01063", 3));
+        myMap.addBuilding(new Building("Nogi House", "100 Orange Street Northampton, MA 01063", 5));
         System.out.println(myMap);
     }
     

@@ -6,6 +6,7 @@ public class House extends Building implements HouseRequirements {
   // Attributes
   private ArrayList<Student> residents;
   private boolean hasDiningRoom;
+  private boolean hasElevator; 
 
   // Constructor
     /**
@@ -15,10 +16,11 @@ public class House extends Building implements HouseRequirements {
    * @param floors The number of floors in the house.
    * @param hasDiningRoom True if the house has a dining room, false otherwise.
    */
-  public House(String address, int floors, boolean hasDiningRoom) {
-    super("myHouse",address, floors); // Call the constructor of the Building class
+  public House(String address, int floors, boolean hasDiningRoom, boolean hasElevator) {
+    super("myHouse", address, floors); // Call the constructor of the Building class
     this.residents = new ArrayList<>();
     this.hasDiningRoom = hasDiningRoom; 
+    this.hasElevator = hasElevator; // Assign the value passed to the constructor
     System.out.println("You have built a house: 🏠");
   }
 
@@ -80,10 +82,48 @@ public class House extends Building implements HouseRequirements {
     return this.residents.contains(s);
   }
 
+  //override showoptions method from Building class
+   /**
+   * Displays the available options for the house.
+   */
+  public void showOptions() {
+    super.showOptions(); // Call the showOptions method from the Building class
+      System.out.println("Available options at " + this.getName() + ":\n + moveIn(Student s) \n + moveOut(Student s) \n + isResident(Student s) \n + nResidents() \n + hasDiningRoom()");
+    }
+
+    // override goToFloor method from Building class
+    /**
+   * Moves to a specified floor in the house.
+   *  
+   * @param floorNum The floor number to move to.
+   * */
+  public void goToFloor(int floorNum) {
+    if (this.activeFloor == -1) {
+        throw new RuntimeException("You must enter the house before moving between floors.");
+    }
+
+    if (floorNum < 1 || floorNum > this.nFloors) {
+        throw new RuntimeException("Invalid floor number.");
+    }
+
+    // Without elevator, only allow moving up/down one floor at a time
+    if (!this.hasElevator && (floorNum != this.activeFloor + 1 && floorNum != this.activeFloor - 1)) {
+        throw new RuntimeException("This house doesn't have an elevator — you can only move one floor at a time.");
+    }
+
+    System.out.println("You are now on floor #" + floorNum + " of " + this.getName());
+    this.activeFloor = floorNum;
+}
+
+    
+
 
   public static void main(String[] args) {
 
-    House myHouse = new House("123 Main St", 2, true); // House with a dining room
+    House myHouse = new House("123 Main St", 2, true, false); // House with a dining room and no elevator
+    //test showOptions method
+    myHouse.showOptions(); // Show available options in the house
+    System.out.println(myHouse); // Print the house details
 
     // Create valid Student objects
     Student JJ = new Student("JJ", "991234560", 2029);

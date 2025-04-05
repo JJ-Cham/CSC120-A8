@@ -10,11 +10,11 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ## Assignment Points:
 
-_____ 1 pt: The `House`, `Library`, and `Cafe` classes all `extend` the modified `Building` class.
+__**Yes**___ 1 pt: The `House`, `Library`, and `Cafe` classes all `extend` the modified `Building` class.
 
 ### Level 1: Method `Overrides` (4 pts)
 
-_____ 1 pt: The `House`, `Library`, and `Cafe` classes all override the `showOptions()` method to include their additional interactive methods
+_**Yes**____ 1 pt: The `House`, `Library`, and `Cafe` classes all override the `showOptions()` method to include their additional interactive methods
 
 _____ 1 pt: The `Library` class has a `goToFloor(...)` method that allows movement between non-adjacent floors
 
@@ -32,7 +32,7 @@ _____ 1 pt: The `Cafe` class includes at least 2 overloaded methods
 
 ### Level 3: `CampusMap.java` (2 pts)
 
-_____ 1 pt: The `main(...)` method in `CampusMap.java` has been modified to include at least 10 `Building`s (or `Building` subclasses)
+___**Yes**__ 1 pt: The `main(...)` method in `CampusMap.java` has been modified to include at least 10 `Building`s (or `Building` subclasses)
 
 _____ 1 pt: The `CampusMap` includes at least one instance of each class: a `House`, a `Library`, a `Cafe`, and a `Building` (demonstrating that each constructor works as expected)
 
@@ -56,6 +56,6 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed `rubric.md` file)
+__**Yes**___ 1 pt: All required files included with submission (including completed `rubric.md` file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment
+_**Yes**____ 1 pt: `reflection.md` contains your reflection on the assignment

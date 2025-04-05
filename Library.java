@@ -119,11 +119,36 @@ public class Library extends Building implements LibraryRequirements {
           System.out.println("Cannot return: " + title + " (Either doesn't exist or is not checked out).");
       }
   }
+
+     //override showOptions method from Building class
+    /**
+     * Displays the available options for the library.
+     */
+    public void showOptions() {
+      super.showOptions(); // Call the showOptions method from the Building class
+      System.out.println("Available options at " + this.getName() + ":\n + addTitle(String title) \n + removeTitle(String title) \n + containsTitle(String title) \n + isAvailable(String title) \n + printCollection() \n + checkOut(String title) \n + returnBook(String title)");
+    }
+
+    //override goToFloor method from the building class
+    /**
+     * Navigates to a specific floor in the library.
+     *
+     * @param floorNum The floor number to navigate to.
+     */ 
+    public void goToFloor(int floorNum) {
+      if (floorNum == 1) {
+          System.out.println("You are now on the ground floor of " + this.getName());
+      } else {
+          super.goToFloor(floorNum); // Call the parent class's goToFloor method
+      }
   
 
 
     public static void main(String[] args) {
       Library JJsLibrary = new Library(new Hashtable<>(), "456 Elm St", 3); // Create a new Library object
+
+      JJsLibrary.showOptions(); // Show available options in the library
+      System.out.println(JJsLibrary); // Print the library details
       // Create a collection of books
       JJsLibrary.addTitle("The Great Gatsby by F. Scott Fitzgerald"); // Add a title to the collection
       JJsLibrary.addTitle("To Kill a Mockingbird by Harper Lee"); // Add another title to the collection

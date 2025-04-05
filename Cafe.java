@@ -71,10 +71,28 @@ public class Cafe extends Building implements CafeRequirements {
         this.nCups += nCups;
         System.out.println("✅ Restocked: +" + nCoffeeOunces + " coffee oz, +" + nSugarPackets + " sugar(s), +" + nCreams + " cream(s), +" + nCups + " cup(s).");
     }
-        
+
+     //override the showOptions method from the building class
+    public void showOptions() {
+        super.showOptions(); // Call the parent class's showOptions method
+        System.out.println("Available options at " + this.name + ":\n + sellCoffee(size, nSugarPackets, nCreams) \n + restock(nCoffeeOunces, nSugarPackets, nCreams, nCups)");
+    }   
+    
+    //override goToFloor method from the building class
+    public void goToFloor(int floorNum) {
+        if (floorNum == 1) {
+            System.out.println("You are now on the ground floor of " + this.name);
+        } else {
+            super.goToFloor(floorNum); // Call the parent class's goToFloor method
+        }
+    }
+    
+
     public static void main(String[] args) {
         // Create a Cafe object
         Cafe JJsCafe = new Cafe(100, 50, 50, 20, "123 Main St", 1);
+        JJsCafe.showOptions(); // Show available options in the cafe
+        System.out.println(JJsCafe); // Print the cafe details
 
         // Sell coffee and check restocking behavior
         JJsCafe.sellCoffee(8, 2, 1);
