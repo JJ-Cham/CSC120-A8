@@ -179,7 +179,7 @@ public class Library extends Building implements LibraryRequirements {
 
       JJsLibrary.showOptions(); // Show available options in the library
       System.out.println(JJsLibrary); // Print the library details
-      // Create a collection of books
+      //Create a collection of books
       JJsLibrary.addTitle("The Great Gatsby by F. Scott Fitzgerald"); // Add a title to the collection
       JJsLibrary.addTitle("To Kill a Mockingbird by Harper Lee"); // Add another title to the collection
       JJsLibrary.addTitle("The Lorax by Dr.Seuss"); // Add another title to the collection
@@ -192,6 +192,19 @@ public class Library extends Building implements LibraryRequirements {
       JJsLibrary.returnBook("The Great Gatsby"); // Attempt to return a null title (should not work)
       JJsLibrary.printCollection(); // Print the collection to see the status of all titles
       JJsLibrary.removeTitle("The Lorax by Dr.Seuss"); // Remove a title from the collection
+
+      //testing overloaded constructor
+      Library JJsLibrary2 = new Library("789 Oak St", 2); // Create a new Library object with no initial collection
+      JJsLibrary2.addTitle("1984 by George Orwell"); // Add a title to the new library
+      JJsLibrary2.addTitle("Brave New World by Aldous Huxley"); // Add another title to the new library
+      JJsLibrary2.printCollection(); // Print the collection of the new library
+      JJsLibrary2.checkOut("1984 by George Orwell"); // Check out a title from the new library
+      JJsLibrary2.printCollection(); // Print the collection to see the status of all titles
+
+      //testing overloaded printCollection method
+      JJsLibrary2.printCollection(true); // Print only available books 
+      JJsLibrary2.printCollection(false); // Print only checked-out books
+      JJsLibrary2.printCollection(); // Print the entire collection
   } 
 
 }

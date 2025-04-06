@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class CampusMap {
 
@@ -45,18 +46,22 @@ public class CampusMap {
 
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4));
-        myMap.addBuilding(new Building("Ziskind House", "79-91 Elm st Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Burton Hall", "100 Park House Northampton, MA 01063", 3));
         myMap.addBuilding(new Building("College Hall", "100 Main st Northampton, MA 01063", 5));
         myMap.addBuilding(new Building("Mwangi Cultural Center", "100 mall Northampton, MA 01063", 1)); 
-        myMap.addBuilding(new Building("Yolanda King House", "100 Blue Street Northampton, MA 01063", 3));
-        myMap.addBuilding(new Building("Morrow House", "100 Yellow Street Northampton, MA 01063", 4));
-        myMap.addBuilding(new Building("King Scales House", "100 Red Street Northampton, MA 01063", 4));   
         myMap.addBuilding(new Building("Chuckett House", "100 Pink Street Northampton, MA 01063", 4));
-        myMap.addBuilding(new Building("Tyler House", "100 Black Street Northampton, MA 01063", 3));
-        myMap.addBuilding(new Building("Nogi House", "100 Orange Street Northampton, MA 01063", 5));
-        System.out.println(myMap);
-        
+        myMap.addBuilding(new Building("Yolanda King House", "100 Blue House Northampton, MA 01063", 3));
+        myMap.addBuilding(new Building("Ziskind House", "100 Park House Northampton, MA 01063", 3)); // Overloaded constructor
+        //testing/implementing all of the overloaded methods/constructors 
+        myMap.addBuilding(new Building("Nogi", "100 Orange Street Northampton, MA 01063", 5));
+        //testing the overloaded House constructor with an elevator and dining room
+        myMap.addBuilding(new House("100 Yellow House Northampton, MA 01063", 3, true, true)); // Overloaded House constructor with elevator and dining room
+        myMap.addBuilding(new House( "100 Park House Northampton, MA 01063", 3)); // Overloaded House constructor
+        myMap.addBuilding(new Library("Young Library", 5)); // Overloaded Library constructor
+        myMap.addBuilding(new Cafe("CC Cafe", 2)); // Overloaded Cafe constructor with default inventory
+        myMap.addBuilding(new Library(new Hashtable<>(), "Neilson Library", 5));
+
+        System.out.println(myMap); // Print the map to see all buildings
     }
     
 }

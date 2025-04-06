@@ -138,5 +138,13 @@ public class Cafe extends Building implements CafeRequirements {
         JJsCafe.sellCoffee(200, 10, 5); // Large request, may fail even after restocking
         JJsCafe.sellCoffee(8, 100, 1); // Not enough sugar
         JJsCafe.sellCoffee(8, 2, 100); // Not enough cream
+
+        //testing overloaded constructor
+        Cafe JJsCafe2 = new Cafe("456 Elm St", 2); // Create a new Cafe object with default inventory
+        JJsCafe2.showOptions(); // Show available options in the cafe
+
+        //testing the restock method 
+        JJsCafe2.restock(50, 25, 10, 5); // Restock with specific amounts
+        JJsCafe2.sellCoffee(8, 2, 1); // Sell coffee after restocking
     }
 }

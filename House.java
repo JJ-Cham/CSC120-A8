@@ -172,5 +172,12 @@ public class House extends Building implements HouseRequirements {
 
     myHouse.moveOut(Kevin);
     System.out.println("Number of residents: " + myHouse.nResidents()); // Should print 0
+
+    //testing overloaded constructor
+    House myHouse2 = new House("456 Elm St", 3); // House without dining room and elevator
+    myHouse2.showOptions(); // Show available options in the house
+
+    //testing overloaded isResident method
+    System.out.println("Is Kevin a resident? " + myHouse.isResident("Kevin")); // Should print false
   }
 }
