@@ -26,6 +26,23 @@ public class Cafe extends Building implements CafeRequirements {
         System.out.println("You have built a cafe: ☕");
     }
 
+    // Overloading the constructor
+    /**
+    * Constructs a Cafe object with default inventory values and specified building details.
+    *
+    * @param address The address of the cafe.
+    * @param floors  The number of floors in the cafe building.
+    */
+    public Cafe(String address, int floors) {
+        super("JJsCafe", address, floors); // Call the constructor of the Building class
+        this.nCoffeeOunces = 100; // Default value for coffee ounces
+        this.nSugarPackets = 50; // Default value for sugar packets
+        this.nCreams = 30; // Default value for cream splashes
+        this.nCups = 100; // Default value for cups
+        System.out.println("You have built a cafe with default inventory: ☕");
+   }
+
+
     /**
      * Sells a coffee with the specified size, sugar packets, and cream splashes.
      * If inventory is insufficient, it triggers restocking and retries the sale.
@@ -55,6 +72,7 @@ public class Cafe extends Building implements CafeRequirements {
         }
     }
 
+    
     /**
      * Restocks the cafe's inventory with the specified amounts of coffee, sugar packets,
      * cream, and cups.
@@ -71,6 +89,23 @@ public class Cafe extends Building implements CafeRequirements {
         this.nCups += nCups;
         System.out.println("✅ Restocked: +" + nCoffeeOunces + " coffee oz, +" + nSugarPackets + " sugar(s), +" + nCreams + " cream(s), +" + nCups + " cup(s).");
     }
+
+    //overloading the restock method
+    /**
+    * Restocks the cafe's inventory with specified amounts for coffee, sugar, cream, or cups.
+    * You can pass 0 for items you don't want to restock.
+    *
+    * @param nCoffeeOunces The number of ounces of coffee to add (optional).
+    * @param nSugarPackets The number of sugar packets to add (optional).
+    */
+    private void restock(int nCoffeeOunces, int nSugarPackets) {
+        this.nCoffeeOunces += nCoffeeOunces;
+        this.nSugarPackets += nSugarPackets;
+        System.out.println("✅ Restocked: +" + nCoffeeOunces + " coffee oz, +" + nSugarPackets + " sugar(s).");
+    }
+
+
+
 
      //override the showOptions method from the building class
     public void showOptions() {
@@ -99,6 +134,7 @@ public class Cafe extends Building implements CafeRequirements {
         JJsCafe.sellCoffee(8, 2, 1);
         JJsCafe.sellCoffee(200, 10, 5); // Should trigger restocking
         JJsCafe.sellCoffee(8, 2, 1); 
+        JJsCafe.restock(50, 25); // Example usage of the overloaded restock method
         JJsCafe.sellCoffee(200, 10, 5); // Large request, may fail even after restocking
         JJsCafe.sellCoffee(8, 100, 1); // Not enough sugar
         JJsCafe.sellCoffee(8, 2, 100); // Not enough cream

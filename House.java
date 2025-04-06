@@ -24,6 +24,21 @@ public class House extends Building implements HouseRequirements {
     System.out.println("You have built a house: 🏠");
   }
 
+  //overloading the constructor
+  /**
+   * Constructs a House with the specified address and number of floors.
+   * 
+   * @param address The address of the house.
+   * @param floors The number of floors in the house.
+   */
+  public House(String address, int floors) {
+    super("myHouse", address, floors); // Call the constructor of the Building class
+    this.residents = new ArrayList<>();
+    this.hasDiningRoom = false; // Default value when not specified
+    this.hasElevator = false; // Default value when not specified
+    System.out.println("You have built a simplified house: 🏠");
+  }
+
   // Accessor methods
     /**
    * Checks if the house has a dining room.
@@ -81,6 +96,23 @@ public class House extends Building implements HouseRequirements {
   public boolean isResident(Student s) {
     return this.residents.contains(s);
   }
+
+  //overloading checking if a student is a resident 
+  /**
+  * Checks if a student with the specified name is a resident of the house.
+  * 
+  * @param studentName The name of the student to check.
+  * @return True if a student with the given name is a resident, false otherwise.
+  */
+  public boolean isResident(String studentName) {
+   for (Student s : this.residents) {
+      if (s.getName().equals(studentName)) {
+          return true;
+      }
+  }
+    return false;
+ }
+
 
   //override showoptions method from Building class
    /**

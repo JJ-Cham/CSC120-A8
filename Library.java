@@ -20,6 +20,20 @@ public class Library extends Building implements LibraryRequirements {
         System.out.println("You have built a library: 📖");
     }
 
+    //overloading the constructor
+    /**
+    * Constructs a Library with an address and number of floors only.
+    *
+    * @param address The address of the library.
+    * @param floors  The number of floors in the library.
+    */
+    public Library(String address, int floors) {
+       super("JJsLibrary", address, floors); // Call the constructor of the Building class
+       this.collection = new Hashtable<>(); // Default to an empty collection
+      System.out.println("You have built a library with no initial collection: 📖");
+   }
+
+
      /**
      * Adds a book title to the collection if it does not already exist.
      *
@@ -34,6 +48,7 @@ public class Library extends Building implements LibraryRequirements {
         System.out.println("Title already exists: " + title);
       }
     }
+
 
     /**
      * Removes a book title from the collection.
@@ -91,6 +106,23 @@ public class Library extends Building implements LibraryRequirements {
         System.out.println(title + " - " + (available ? "Available" : "Checked Out")); // Print the title and its status
       }
     }
+
+    //overloading the printCollection method
+    /**
+    * Prints the collection based on the specified availability status.
+    * 
+    * @param onlyAvailable If true, prints only available books; if false, prints only checked-out books.
+    */
+    public void printCollection(boolean onlyAvailable) {
+      System.out.println("Filtered Library Collection: ");
+      for (String title : this.collection.keySet()) { // Iterate through the keys (titles) in the collection
+        boolean available = this.collection.get(title); // Get the availability status of the title
+        if (available == onlyAvailable) { // Print only titles that match the specified status
+           System.out.println(title + " - " + (available ? "Available" : "Checked Out"));
+       }
+  } 
+}
+
   
     /**
      * Checks out a book by marking it as unavailable.
@@ -136,11 +168,9 @@ public class Library extends Building implements LibraryRequirements {
      * @param floorNum The floor number to navigate to.
      */ 
     public void goToFloor(int floorNum) {
-      if (floorNum == 1) {
-          System.out.println("You are now on the ground floor of " + this.getName());
-      } else {
-          super.goToFloor(floorNum); // Call the parent class's goToFloor method
-      }
+      super.goToFloor(floorNum); // Allows movement to any valid floor, including non-adjacent ones
+  }
+  
   
 
 
