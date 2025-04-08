@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Building",
+            "request": "launch",
+            "mainClass": "Building",
+            "projectName": "CSC120-A8_40167cf3"
+        },
+        {
+            "type": "java",
+            "name": "Cafe",
+            "request": "launch",
+            "mainClass": "Cafe",
+            "projectName": "CSC120-A8_40167cf3"
+        },
+        {
+            "type": "java",
+            "name": "CampusMap",
+            "request": "launch",
+            "mainClass": "CampusMap",
+            "projectName": "CSC120-A8_40167cf3"
+        },
+        {
+            "type": "java",
+            "name": "Course",
+            "request": "launch",
+            "mainClass": "Course",
+            "projectName": "CSC120-A8_40167cf3"
+        },
+        {
+            "type": "java",
+            "name": "House",
+            "request": "launch",
+            "mainClass": "House",
+            "projectName": "CSC120-A8_40167cf3"
+        },
+        {
+            "type": "java",
+            "name": "Library",
+            "request": "launch",
+            "mainClass": "Library",
+            "projectName": "CSC120-A8_40167cf3"
+        },
+        {
+            "type": "java",
+            "name": "Student",
+            "request": "launch",
+            "mainClass": "Student",
+            "projectName": "CSC120-A8_40167cf3"
+        }
+    ]
+}

@@ -146,5 +146,8 @@ public class Cafe extends Building implements CafeRequirements {
         //testing the restock method 
         JJsCafe2.restock(50, 25, 10, 5); // Restock with specific amounts
         JJsCafe2.sellCoffee(8, 2, 1); // Sell coffee after restocking
+
+        //testing the goToFloor method
+        JJsCafe2.goToFloor(1); // Move to the ground floor
     }
 }

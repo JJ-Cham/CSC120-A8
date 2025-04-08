@@ -205,6 +205,12 @@ public class Library extends Building implements LibraryRequirements {
       JJsLibrary2.printCollection(true); // Print only available books 
       JJsLibrary2.printCollection(false); // Print only checked-out books
       JJsLibrary2.printCollection(); // Print the entire collection
+
+      //test goToFloor method
+      Library myLibrary = new Library(new Hashtable<>(), "123 Main St", 3); // Create a new Library object
+      myLibrary.enter(); // Use the variable by calling a method on it
+      myLibrary.goToFloor(2); // Move to floor 2
+      myLibrary.goToFloor(3); // Move to floor 3
   } 
 
 }

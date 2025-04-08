@@ -22,8 +22,8 @@ public class House extends Building implements HouseRequirements {
     this.hasDiningRoom = hasDiningRoom; 
     this.hasElevator = hasElevator; // Assign the value passed to the constructor
     System.out.println("You have built a house: 🏠");
-  }
-
+    }
+  
   //overloading the constructor
   /**
    * Constructs a House with the specified address and number of floors.
@@ -179,5 +179,25 @@ public class House extends Building implements HouseRequirements {
 
     //testing overloaded isResident method
     System.out.println("Is Kevin a resident? " + myHouse.isResident("Kevin")); // Should print false
+
+    //testing goToFloor method
+      House myHousey = new House("123 Main St", 2, true, false); // no elevator
+      myHousey.enter(); // <- ADD THIS
+      myHousey.goToFloor(2); // should work (1 -> 2)
+      
+      try {
+          myHousey.goToFloor(1); // should work (2 -> 1)
+          myHousey.goToFloor(3); // should FAIL — too big a jump
+      } catch (RuntimeException e) {
+          System.out.println("Caught expected error: " + e.getMessage());
+      }
+  
+      House fancyHouse = new House("456 Fancy Ave", 5, true, true); // has elevator
+      fancyHouse.enter(); // <- MUST enter first
+      fancyHouse.goToFloor(5); // should work
+      fancyHouse.goToFloor(2); // should work
+  
+    } 
   }
-}
+      
+  
