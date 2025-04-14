@@ -55,8 +55,8 @@ public class CampusMap {
         //testing/implementing all of the overloaded methods/constructors 
         myMap.addBuilding(new Building("Nogi", "100 Orange Street Northampton, MA 01063", 5));
         //testing the overloaded House constructor with an elevator and dining room
-        myMap.addBuilding(new House("100 Yellow House Northampton, MA 01063", 3, true, true)); // Overloaded House constructor with elevator and dining room
-        myMap.addBuilding(new House( "100 Park House Northampton, MA 01063", 3)); // Overloaded House constructor
+        myMap.addBuilding(new House("Friedman Apt.s", "100 Yellow House Northampton, MA 01063", 3)); // Overloaded House constructor with elevator and dining room
+        myMap.addBuilding(new House("Albright", "100 Park House Northampton, MA 01063", 3, true, true )); // Overloaded House constructor
         myMap.addBuilding(new Library("Young Library", 5)); // Overloaded Library constructor
         myMap.addBuilding(new Cafe("CC Cafe", 2)); // Overloaded Cafe constructor with default inventory
         myMap.addBuilding(new Library(new Hashtable<>(), "Neilson Library", 5));

@@ -16,7 +16,7 @@ public class House extends Building implements HouseRequirements {
    * @param floors The number of floors in the house.
    * @param hasDiningRoom True if the house has a dining room, false otherwise.
    */
-  public House(String name, String address, int floors,  ArrayList<String> residents, boolean hasDiningRoom, boolean hasElevator) {
+  public House(String name, String address, int floors,  ArrayList<Student> residents, boolean hasDiningRoom, boolean hasElevator) {
     super(name, address, floors); // Call the constructor of the Building class
     this.residents = new ArrayList<Student>();
     this.hasDiningRoom = hasDiningRoom; 
@@ -33,7 +33,7 @@ public class House extends Building implements HouseRequirements {
    */
   public House(String name, String address, int floors) {
     super( name, address, floors); // Call the constructor of the Building class
-    this.residents = new ArrayList<>();
+    this.residents = new ArrayList<Student>();
     this.hasDiningRoom = false; // Default value when not specified
     this.hasElevator = false; // Default value when not specified
     System.out.println("You have built a simplified house: 🏠");
@@ -152,7 +152,7 @@ public class House extends Building implements HouseRequirements {
 
   public static void main(String[] args) {
 
-    House myHouse = new House("123 Main St", 2, true, false); // House with a dining room and no elevator
+    House myHouse = new House("123 Main St", "123 Main St", 2, new ArrayList<>(), true, false); // House with a dining room and no elevator
     //test showOptions method
     myHouse.showOptions(); // Show available options in the house
     System.out.println(myHouse); // Print the house details
@@ -174,14 +174,14 @@ public class House extends Building implements HouseRequirements {
     System.out.println("Number of residents: " + myHouse.nResidents()); // Should print 0
 
     //testing overloaded constructor
-    House myHouse2 = new House("456 Elm St", 3); // House without dining room and elevator
+    House myHouse2 = new House("myHouse2", "456 Elm St", 3); // House without dining room and elevator
     myHouse2.showOptions(); // Show available options in the house
 
     //testing overloaded isResident method
     System.out.println("Is Kevin a resident? " + myHouse.isResident("Kevin")); // Should print false
 
     //testing goToFloor method
-      House myHousey = new House("123 Main St", 2, true, false); // no elevator
+      House myHousey = new House("myHousey", "123 Main St", 2, new ArrayList<>(), true, false); // no elevator
       myHousey.enter(); // <- ADD THIS
       myHousey.goToFloor(2); // should work (1 -> 2)
       
@@ -192,7 +192,7 @@ public class House extends Building implements HouseRequirements {
           System.out.println("Caught expected error: " + e.getMessage());
       }
   
-      House fancyHouse = new House("456 Fancy Ave", 5, true, true); // has elevator
+      House fancyHouse = new House("fancyHouse", "456 Fancy Ave", 5, new ArrayList<>(), true, true); // has elevator
       fancyHouse.enter(); // <- MUST enter first
       fancyHouse.goToFloor(5); // should work
       fancyHouse.goToFloor(2); // should work
