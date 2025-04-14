@@ -14,9 +14,9 @@ public class Library extends Building implements LibraryRequirements {
      * @param address    The address of the library.
      * @param floors     The number of floors in the library.
      */
-    public Library(Hashtable<String, Boolean> collection, String address, int floors) {
-        super("JJsLibrary", address, floors); // Call the constructor of the Building class
-        this.collection = collection; // Initialize the collection with the provided Hashtable
+    public Library(String name, String address, int floors, Hashtable<String, Boolean> collection) {
+        super(name, address, floors); // Call the constructor of the Building class
+        this.collection = new Hashtable<>(); // Initialize the collection with the provided Hashtable
         System.out.println("You have built a library: 📖");
     }
 
@@ -27,8 +27,8 @@ public class Library extends Building implements LibraryRequirements {
     * @param address The address of the library.
     * @param floors  The number of floors in the library.
     */
-    public Library(String address, int floors) {
-       super("JJsLibrary", address, floors); // Call the constructor of the Building class
+    public Library(String name, String address, int floors) {
+       super(name, address, floors); // Call the constructor of the Building class
        this.collection = new Hashtable<>(); // Default to an empty collection
       System.out.println("You have built a library with no initial collection: 📖");
    }
@@ -175,7 +175,7 @@ public class Library extends Building implements LibraryRequirements {
 
 
     public static void main(String[] args) {
-      Library JJsLibrary = new Library(new Hashtable<>(), "456 Elm St", 3); // Create a new Library object
+      Library JJsLibrary = new Library("JJ's Library", "456 Elm St", 3); // Create a new Library object
 
       JJsLibrary.showOptions(); // Show available options in the library
       System.out.println(JJsLibrary); // Print the library details
@@ -194,7 +194,7 @@ public class Library extends Building implements LibraryRequirements {
       JJsLibrary.removeTitle("The Lorax by Dr.Seuss"); // Remove a title from the collection
 
       //testing overloaded constructor
-      Library JJsLibrary2 = new Library("789 Oak St", 2); // Create a new Library object with no initial collection
+      Library JJsLibrary2 = new Library("JJ's Second Library", "789 Oak St", 2); // Create a new Library object with no initial collection
       JJsLibrary2.addTitle("1984 by George Orwell"); // Add a title to the new library
       JJsLibrary2.addTitle("Brave New World by Aldous Huxley"); // Add another title to the new library
       JJsLibrary2.printCollection(); // Print the collection of the new library
@@ -207,7 +207,7 @@ public class Library extends Building implements LibraryRequirements {
       JJsLibrary2.printCollection(); // Print the entire collection
 
       //test goToFloor method
-      Library myLibrary = new Library(new Hashtable<>(), "123 Main St", 3); // Create a new Library object
+      Library myLibrary = new Library("My Library", "123 Main St", 3); // Create a new Library object
       myLibrary.enter(); // Use the variable by calling a method on it
       myLibrary.goToFloor(2); // Move to floor 2
       myLibrary.goToFloor(3); // Move to floor 3

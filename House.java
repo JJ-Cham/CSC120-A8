@@ -16,9 +16,9 @@ public class House extends Building implements HouseRequirements {
    * @param floors The number of floors in the house.
    * @param hasDiningRoom True if the house has a dining room, false otherwise.
    */
-  public House(String address, int floors, boolean hasDiningRoom, boolean hasElevator) {
-    super("myHouse", address, floors); // Call the constructor of the Building class
-    this.residents = new ArrayList<>();
+  public House(String name, String address, int floors,  ArrayList<String> residents, boolean hasDiningRoom, boolean hasElevator) {
+    super(name, address, floors); // Call the constructor of the Building class
+    this.residents = new ArrayList<Student>();
     this.hasDiningRoom = hasDiningRoom; 
     this.hasElevator = hasElevator; // Assign the value passed to the constructor
     System.out.println("You have built a house: 🏠");
@@ -31,8 +31,8 @@ public class House extends Building implements HouseRequirements {
    * @param address The address of the house.
    * @param floors The number of floors in the house.
    */
-  public House(String address, int floors) {
-    super("myHouse", address, floors); // Call the constructor of the Building class
+  public House(String name, String address, int floors) {
+    super( name, address, floors); // Call the constructor of the Building class
     this.residents = new ArrayList<>();
     this.hasDiningRoom = false; // Default value when not specified
     this.hasElevator = false; // Default value when not specified

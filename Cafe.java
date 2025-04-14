@@ -17,8 +17,8 @@ public class Cafe extends Building implements CafeRequirements {
      * @param address       The address of the cafe.
      * @param floors        The number of floors in the cafe building.
      */
-    public Cafe(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups, String address, int floors) {
-        super("JJsCafe", address, floors);
+    public Cafe(String name, String address, int floors, int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) {
+        super(name, address, floors);
         this.nCoffeeOunces = nCoffeeOunces;
         this.nSugarPackets = nSugarPackets;
         this.nCreams = nCreams;
@@ -33,8 +33,8 @@ public class Cafe extends Building implements CafeRequirements {
     * @param address The address of the cafe.
     * @param floors  The number of floors in the cafe building.
     */
-    public Cafe(String address, int floors) {
-        super("JJsCafe", address, floors); // Call the constructor of the Building class
+    public Cafe(String name, String address, int floors) {
+        super(name, address, floors); // Call the constructor of the Building class
         this.nCoffeeOunces = 100; // Default value for coffee ounces
         this.nSugarPackets = 50; // Default value for sugar packets
         this.nCreams = 30; // Default value for cream splashes
@@ -125,7 +125,7 @@ public class Cafe extends Building implements CafeRequirements {
 
     public static void main(String[] args) {
         // Create a Cafe object
-        Cafe JJsCafe = new Cafe(100, 50, 50, 20, "123 Main St", 1);
+        Cafe JJsCafe = new Cafe("JJ's Cafe", "123 Main St", 1, 100, 50, 50, 20); // Create a new Cafe object with default inventory
         JJsCafe.showOptions(); // Show available options in the cafe
         System.out.println(JJsCafe); // Print the cafe details
 
@@ -140,7 +140,7 @@ public class Cafe extends Building implements CafeRequirements {
         JJsCafe.sellCoffee(8, 2, 100); // Not enough cream
 
         //testing overloaded constructor
-        Cafe JJsCafe2 = new Cafe("456 Elm St", 2); // Create a new Cafe object with default inventory
+        Cafe JJsCafe2 = new Cafe("JJs Cafe2","367 Elm st", 2); // Create a new Cafe object with default inventory
         JJsCafe2.showOptions(); // Show available options in the cafe
 
         //testing the restock method 
