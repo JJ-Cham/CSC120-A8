@@ -113,14 +113,18 @@ public class Cafe extends Building implements CafeRequirements {
         System.out.println("Available options at " + this.name + ":\n + sellCoffee(size, nSugarPackets, nCreams) \n + restock(nCoffeeOunces, nSugarPackets, nCreams, nCups)");
     }   
     
-    //override goToFloor method from the building class
+    @Override
     public void goToFloor(int floorNum) {
-        if (floorNum == 1) {
+        if (floorNum < 1) {
+            throw new IllegalArgumentException("Cannot move below the 1st floor.");
+        } else if (floorNum == 1) {
             System.out.println("You are now on the ground floor of " + this.name);
         } else {
             super.goToFloor(floorNum); // Call the parent class's goToFloor method
         }
     }
+       
+    
     
 
     public static void main(String[] args) {
